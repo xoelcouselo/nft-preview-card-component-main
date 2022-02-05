@@ -35,81 +35,128 @@
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  background-color: #0d1a2d;
+  background-color: hsl(217, 54%, 11%);
 }
-
 main {
-  /*display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;*/
+  width: 100vw;
+  height: 100vh;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: #0d192b;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  background-color: #0d192b;
 }
 .card {
-  background-color: #15273f;
-  max-width: 30rem;
+  background-color: hsl(216, 50%, 16%);
+  width: 340px;
+  min-height: 550px;
   border-radius: 15px;
-}
-.card__image {
-  /*min-width: 100%;*/
-  border-radius: 15px;
-  margin: 15px;
-  box-sizing: border-box;
+  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.75);
 }
 .card__info {
-  padding: 15px;
+  padding: 20px;
 }
+.card__info__imgcontainer {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+.card__info__imgcontainer--img {
+  width: 100%;
+  display: block;
+}
+.card__info__imgcontainer__overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: hsl(178, 100%, 50%, 0.5);
+  display: none;
+}
+.card__info__imgcontainer__overlay--icon {
+  position: absolute;
+  width: 50px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.card__info__imgcontainer:hover .card__info__imgcontainer__overlay {
+  display: block;
+}
+
 .card__info--name {
   font-family: "Outfit", sans-serif;
-  font-weight: 600;
-  color: #fcffff;
+  font-weight: 500;
+  color: hsl(0, 0%, 100%);
+  padding: 15px 0 15px 0;
+}
+.card__info--name:hover {
+  color: hsl(178, 100%, 50%);
 }
 .card__info--descrip {
   font-family: "Outfit", sans-serif;
   font-weight: 400;
-  color: #8bacd9;
+  font-size: 18px;
+  color: hsl(215, 51%, 70%);
+  padding: 10px 0 35px 0;
   display: inline-block;
 }
-.card__info--price {
-  font-family: "Outfit", sans-serif;
-  font-weight: 300;
-  color: #00fff8;
+.card__info__atrib {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
-.card__info--days {
+/* .card__info__atrib__price {
+} */
+.card__info__atrib__price--p {
   font-family: "Outfit", sans-serif;
   font-weight: 300;
-  color: #8bacd9;
+  color: hsl(178, 100%, 50%);
+  padding: 0 0 0 5px;
+}
+/* .card__info__atrib__clock {
+} */
+.card__info__atrib_clock--p {
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  color: hsl(215, 51%, 70%);
+  padding: 0 0 0 5px;
 }
 .card__creator {
   font-family: "Outfit", sans-serif;
   font-weight: 300;
-  color: #8bacd9;
-  display: inline-block;
-  justify-content: center;
+  color: hsl(215, 51%, 70%);
+  border-top: 1px solid hsl(215, 32%, 27%);
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: left;
   align-items: center;
 }
 .card__creator--img {
-  max-width: 30px;
+  max-width: 35px;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
 }
 .card__creator--info {
-  color: #8bacd9;
+  color: hsl(215, 51%, 70%);
+  margin-left: 15px;
+  border-top: 0;
 }
-.attribution {
-  color: #8bacd9;
+.card__creator--info span {
+  color: hsl(0, 0%, 100%);
+  margin-left: 4px;
+}
+.card__creator--info span:hover {
+  color: hsl(178, 100%, 50%);
 }
